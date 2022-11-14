@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Toggle Password Show</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" />
+</head>
+
+<body ng-app="myapp" ng-controller="mycontroller">
+    <div class="container">
+        <div class="col-md-6">
+            <h1> Registration Form </h1>
+            <form class="ui large form">
+                <div class="ui stacked segment">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="adsoyad" class="form-control" ng-model="kullanici.AdiSoyadi" required
+                            ng-minlength="5" ng-maxlength="10" placeholder="first name">
+                        <!--
+                    required sayesinde boş geçilemez.
+                    ng-minlength ile minumum 5, ng-maxlength ile de maksimum 10 karakter girilebilir.
+                -->
+                    </div>
+
+                    <div class="form group">
+                        <label for="lastmane">Last Name</label>
+                        <input type="text" class="form-control" id="lastmane" placeholder="lastmane" required>
+                    </div>
+                    <div class="form group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form group">
+                        <label for="Date">Date of Birth</label>
+                        <input type="date" class="form-control" id="Date" placeholder="Date">
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="field">
+                       <div class="ui icon input">
+                            <input type="password" ng-model="box1" id="password" name="password" placeholder="Password" />
+                            <i class="circular eye link icon" onclick="togglePassword()"></i>
+                        </div>
+                    </div>
+                
+                    <div class="form group">
+                        <label for="bio">About : </label>
+                        <textarea rows="3" type="email" class="form-control" id="bio"></textarea>
+                    </div>
+
+                    <div class="form-check disable">
+                        <!--Buradaki disable onu zorunlu seçtirir.-->
+                        <label for="term">I accept term</label>
+                        <input type="checkbox" checked="true" disabled class="form-check-input" id="term">
+                    </div>
+                    <button type="submit" class="btn btn-success" ng-disable="false">Send</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            var element = document.getElementById('password');
+            element.type = (element.type == 'password' ? 'text' : 'password');
+        }
+    </script>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+
+</html>
